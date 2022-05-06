@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "start": "nodemon -L src/server.js"
   },
   "keywords": [],
   "author": "",
