@@ -2,7 +2,7 @@
   "name": "sistema-de-entrada-hospital",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon -L src/server.js"
   },
@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4"
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.0"
   }
 }
