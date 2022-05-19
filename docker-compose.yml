@@ -12,7 +12,7 @@ services:
   
   app:
     build: .
-    command: npm start
+    command: npx sequelize db:migrate && npm start
     ports:
       - "3000:3000"
     depends_on:
