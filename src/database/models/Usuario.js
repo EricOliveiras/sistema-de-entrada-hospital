@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     telefone: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Usuario',
+    modelName: 'usuario',
   });
   return Usuario;
 };
