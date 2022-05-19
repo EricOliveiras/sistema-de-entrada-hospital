@@ -1,5 +1,8 @@
+require('dotenv').config();
 const app = require('./app');
 
-app.listen(3000, () => { 
-	console.log('Server rodando na porta 3000, subindo meu server com Docker!!') 
+const port = 3000;
+
+app.listen(port, () => { 
+	console.log(`Server rodando na porta ${port}`);
 });

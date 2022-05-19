@@ -3,7 +3,9 @@ const Router = require('express').Router;
 const router = Router();
 
 router.get('/', (req, res) => {
-	res.send("ok!");
+	res.json({
+		message: 'Hello World!',
+	});
 });
 
 module.exports = router;
