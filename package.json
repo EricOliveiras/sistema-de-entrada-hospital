@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L src/server.js"
+    "start": "nodemon -L src/server.js",
+    "dev": "nodemon -L src/server.js && npx sequelize db:migrate ",
+    "reverse": "npx sequelize db:migrate:undo:all"
   },
   "keywords": [],
   "author": "",

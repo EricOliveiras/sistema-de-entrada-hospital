@@ -1,11 +1,10 @@
-const Router = require('express').Router;
+const Router = require('express');
+
+const usuarioController = require('../controller/usuarioController');
 
 const router = Router();
 
-router.get('/', (req, res) => {
-	res.json({
-		message: 'Hello World!',
-	});
-});
+router.post('/adicionar', usuarioController.criarUsuario);
+router.get('/listar', usuarioController.listarUsuarios);
 
 module.exports = router;

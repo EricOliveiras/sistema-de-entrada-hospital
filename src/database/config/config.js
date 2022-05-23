@@ -7,9 +7,9 @@ const config = {
 	password: process.env.DB_PASS,
 	port: process.env.DB_PORT,
 	'define': {
-    'underscored': true,
-    'timestamps': true,
-  },
+		'underscored': true,
+		'timestamps': true,
+	}
 };
 
 module.exports = config;
