@@ -2,12 +2,12 @@ const service = require('../service/usuarioService');
 
 module.exports = {
   async criarUsuario(req, res) {
-    const usuario = req.body;
-    const usuarioExistente = await service.buscarUsuarioPorDocumento(usuario.documento);
+    const { nome, documento, telefone } = req.body;
+    const usuarioExistente = await service.buscarUsuarioPorDocumento(documento);
     if (usuarioExistente) {
-      res.status(400).send('Usuário já cadastrado');
+      return res.status(400).json({ error: 'Usuário já cadastrado' });
     };
-
+    const usuario = { nome, documento, telefone };
     const usuarioCriado = await service.criarUsuario(usuario);
     return res.json(usuarioCriado);
   },

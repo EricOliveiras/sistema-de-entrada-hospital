@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const config = require('./config/config');
-const usuarioModel = require('./models/usuario');
+const usuarioModel = require('./models/Usuario');
 
 const connection =  new Sequelize(config);
 

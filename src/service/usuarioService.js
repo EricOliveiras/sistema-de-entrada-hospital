@@ -2,7 +2,7 @@ const usuarioRepository = require('../database/models/Usuario');
 
 module.exports = {
   async buscarUsuarioPorDocumento(documento) {
-    return await usuarioRepository.findOne({ where: { documento } });
+    return await usuarioRepository.findOne({ where: { documento: documento } });
   },
 
   async criarUsuario(usuario) {
@@ -11,5 +11,5 @@ module.exports = {
 
   async listarUsuarios() {
     return await usuarioRepository.findAll();
-  }
+  },
 };
