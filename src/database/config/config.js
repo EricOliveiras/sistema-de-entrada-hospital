@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+// Configurações do banco de dados
 const config = {
 	dialect:  'postgres',
 	host: process.env.DB_HOST,

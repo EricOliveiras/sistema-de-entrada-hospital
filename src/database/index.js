@@ -3,6 +3,7 @@ const { Sequelize } = require('sequelize');
 const config = require('./config/config');
 const usuarioModel = require('./models/Usuario');
 
+// Cria a conexão com o banco de dados
 const connection =  new Sequelize(config);
 
 try {
