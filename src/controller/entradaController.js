@@ -4,24 +4,41 @@ const serviceUsuario = require('../service/usuarioService');
 module.exports = {
   // Cria uma nova entrada
   async criarEntrada(req, res) {
-    const entrada = req.body;
+    const { nome_paciente, documento_paciente, nome_acompanhante, documento_acompanhante, telefone, observacao } = req.body;
     
-    const usuarioPacienteExiste = await serviceUsuario.checarSeUsuarioExiste(entrada.documento_paciente);
-    const usuariAcompanhanteExiste = await serviceUsuario.checarSeUsuarioExiste(entrada.documento_acompanhante);
+    const usuarioPacienteExiste = await serviceUsuario.checarSeUsuarioExiste(documento_paciente);
+    const usuarioAcompanhanteExiste = await serviceUsuario.checarSeUsuarioExiste(documento_acompanhante);
 
     if (!usuarioPacienteExiste) {
-      const { nome_paciente, documento_paciente, telefone} = entrada;
-      await serviceUsuario.criarUsuario(nome_paciente, documento_paciente, telefone);
+      let usuario = ({
+        nome: nome_paciente,
+        documento: documento_paciente,
+        telefone: telefone,
+      });
+
+      await serviceUsuario.criarUsuario(usuario);
     };
 
-    if (!usuariAcompanhanteExiste) {
-      const { nome_acompanhante, documento_acompanhante, telefone} = entrada;
-      await serviceUsuario.criarUsuario(nome_acompanhante, documento_acompanhante, telefone);
+    if (!usuarioAcompanhanteExiste) {
+      let usuario = ({
+        nome: nome_acompanhante,
+        documento: documento_acompanhante,
+        telefone: telefone,
+      });
+
+      await serviceUsuario.criarUsuario(usuario);
     };
 
-    const entradaCriada = await serviceEntrada.criarEntrada(entrada);
+    const entradaCriada = await serviceEntrada.criarEntrada({
+      nome_paciente,
+      documento_paciente,
+      nome_acompanhante,
+      documento_acompanhante,
+      telefone,
+      observacao
+    });
 
-    res.status(201).json(entradaCriada);
+    return res.status(201).json(entradaCriada);
   },
 
   // Lista todas as entradas
@@ -29,9 +46,9 @@ module.exports = {
     const entradas = await serviceEntrada.listarEntradas();
 
     if (entradas.length === 0) {
-      res.status(404).json('Nenhuma entrada cadastrada');
+      return res.status(404).json('Nenhuma entrada cadastrada');
     };
 
-    res.json(entradas);
+    return res.json(entradas);
   }
-}
+};

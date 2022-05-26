@@ -9,7 +9,8 @@ module.exports = {
 
     if (checarSeUsuarioExiste) {
       return res.status(400).json({ error: 'Usuário já existe' });
-    }
+    };
+    
     const usuario = await service.criarUsuario({ nome, documento, telefone });
 
     return res.json(usuario);

@@ -10,4 +10,4 @@ module.exports = {
   async listarEntradas() {
     return await entradaRepository.findAll();
   },
-}
+};
