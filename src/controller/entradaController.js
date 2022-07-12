@@ -23,7 +23,7 @@ module.exports = {
     };
 
      // Se eiste um acompanhante, cria um novo usuário
-     if (documento_acompanhante) {
+    if (documento_acompanhante) {
       // Verifica se o usuário já existe
       const usuarioAcompanhanteExiste = await serviceUsuario.checarSeUsuarioExiste(documento_acompanhante);
 

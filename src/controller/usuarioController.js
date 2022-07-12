@@ -21,7 +21,7 @@ module.exports = {
     const usuarios = await service.listarUsuarios();
 
     if (usuarios.length === 0) {
-      return res.status(404).json({ error: 'Nenhum usuário encontrado' });
+      return res.status(400).json({ error: 'Nenhum usuário encontrado' });
     };
 
     return res.json(usuarios);
