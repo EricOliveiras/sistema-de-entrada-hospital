@@ -1,11 +1,15 @@
 const Router = require('express');
 
 const usuarioController = require('../controller/usuarioController');
+const middleware = require('../middlewares/validacoesString');
 
 const router = Router();
 
 // Endpoint para criar um novo usuário
-router.post('/adicionar', usuarioController.criarUsuario);
+router.post('/adicionar',
+  middleware.checarTamanhoString,
+  middleware.trasnformarString,
+  usuarioController.criarUsuario);
 
 // Endpoint para listar todos os usuários
 router.get('/listar', usuarioController.listarUsuarios);
