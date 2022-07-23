@@ -9,7 +9,8 @@ const router = Router();
 router.post('/adicionar',
   middleware.checarTamanhoString,
   middleware.trasnformarString,
-  usuarioController.criarUsuario);
+  usuarioController.criarUsuario
+);
 
 // Endpoint para listar todos os usuários
 router.get('/listar', usuarioController.listarUsuarios);
