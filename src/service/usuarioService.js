@@ -12,7 +12,7 @@ module.exports = {
   },
 
   // Lista todos os usuários
-  async listarUsuarios() {
+  async listarUsuarios() {  
     return await usuarioRepository.findAll();
   },
 

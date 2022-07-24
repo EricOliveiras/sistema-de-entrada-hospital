@@ -10,4 +10,10 @@ module.exports = {
   async listarEntradas() {
     return await entradaRepository.findAll();
   },
+
+  // Busca uma entrada pelo ID do usuário
+  async listarEntradasPorUsuario(id) {
+    return await entradaRepository.findAll({ where: { usuario_id: id } });
+  },
+
 };

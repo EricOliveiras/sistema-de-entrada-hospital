@@ -1,4 +1,5 @@
 const service = require('../service/usuarioService');
+const entradaService = require('../service/entradaService');
 
 module.exports = {
   // Cria um novo usuário
@@ -18,7 +19,7 @@ module.exports = {
 
   // Lista todos os usuários
   async listarUsuarios(req, res) {
-    const usuarios = await service.listarUsuarios();
+    const usuarios = await service.listarUsuarios(); 
 
     if (usuarios.length === 0) {
       return res.status(400).json({ error: 'Nenhum usuário encontrado' });
@@ -32,12 +33,16 @@ module.exports = {
     const { id } = req.params;
 
     const usuario = await service.buscarUsuarioPorId(id);
+    const entradas = await entradaService.listarEntradasPorUsuario(id);
 
     if(!usuario) {
       return res.status(400).json({ error: 'Usuário não encontrado' });
     };
 
-    return res.json(usuario);
+    return res.json({
+      usuario,
+      entradas,
+    });
   },
 
   // Busca um usuário pelo documento

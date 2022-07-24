@@ -1,8 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Usuario extends Model {
+class Entrada extends Model {
+  static associate(models) {
+    this.belongsTo(models.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
+  };
+
   static init(sequelize) {
     super.init({
+      usuario_id: DataTypes.INTEGER,
       nome_paciente: DataTypes.STRING,
       documento_paciente: DataTypes.STRING,
       nome_acompanhante: DataTypes.STRING,
@@ -17,4 +22,4 @@ class Usuario extends Model {
   
 };
 
-module.exports = Usuario;
+module.exports = Entrada;
