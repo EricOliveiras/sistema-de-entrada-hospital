@@ -4,7 +4,7 @@ class Entrada extends Model {
   static associate(models) {
     this.belongsTo(models.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
   };
-
+  
   static init(sequelize) {
     super.init({
       usuario_id: DataTypes.INTEGER,
@@ -16,7 +16,6 @@ class Entrada extends Model {
       observacao: DataTypes.STRING,
     }, {
       sequelize,
-      modelName: 'entrada',
     });
   };
   

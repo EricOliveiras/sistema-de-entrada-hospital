@@ -18,7 +18,7 @@ module.exports = {
 
   // Busca um usuário pelo ID
   async buscarUsuarioPorId(id) {
-    return await usuarioRepository.findOne({ where: { id } });
+    return await usuarioRepository.findOne({ where: { id }, include: [{ association: 'entradas'}] });
   },
 
   // Atualiza um usuário

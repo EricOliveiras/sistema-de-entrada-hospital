@@ -12,7 +12,6 @@ class Usuario extends Model {
       telefone: DataTypes.STRING,
     }, {
       sequelize,
-      modelName: 'usuario',
     });
   };
   
