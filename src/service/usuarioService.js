@@ -27,7 +27,7 @@ module.exports = {
   },
 
   // Deleta um usuário
-  async deletarUser(id) {
+  async deletarUsuario(id) {
     return await usuarioRepository.destroy({ where: { id } });
   },
 };
