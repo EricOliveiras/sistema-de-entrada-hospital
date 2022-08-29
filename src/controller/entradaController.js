@@ -1,6 +1,5 @@
 const serviceEntrada = require('../service/entradaService');
 const serviceUsuario = require('../service/usuarioService');
-const Usuario = require('../database/models/Usuario');
 
 module.exports = {
   // Cria uma nova entrada
