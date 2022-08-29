@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L src/server.js",
+    "start": "node src/server.js",
     "migrate-down": "npx sequelize db:migrate:undo:all",
     "migrate-up": "npx sequelize db:migrate"
   },
