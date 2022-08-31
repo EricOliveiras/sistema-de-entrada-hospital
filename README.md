@@ -32,7 +32,7 @@ Entre na pasta do projeto e no terminal rode o comando
 docker-compose up
 ```
 
-No seu insomnia/postman importe o arquivo insomnia.json para gerar os modulos de requisições.
+No seu insomnia/postman importe o arquivo insomnia.json que está na raiz do projeto, para gerar os modulos de requisições.
 ```
 insomnia.json
 ```
