@@ -1,7 +1,6 @@
 const service = require('../service/usuarioService');
 
 module.exports = {
-  // Cria um novo usuário
   async criarUsuario(req, res) {
     const { nome, documento, telefone } = req.body;
 
@@ -16,7 +15,6 @@ module.exports = {
     return res.json(usuario);
   },
 
-  // Lista todos os usuários
   async listarUsuarios(req, res) {
     const usuarios = await service.listarUsuarios(); 
 
@@ -27,7 +25,6 @@ module.exports = {
     return res.json(usuarios);
   },
 
-  // Busca um usuário pelo ID
   async buscarUsuarioPorId(req, res) {
     const { id } = req.params;
 
@@ -40,7 +37,6 @@ module.exports = {
     return res.json({ usuario });
   },
 
-  // Busca um usuário pelo documento
   async buscarUsuarioPorDocumento(req, res) {
     const { documento } = req.params;
 
@@ -53,7 +49,6 @@ module.exports = {
     return res.json(usuario);
   },
 
-  // Atualiza um usuário
   async atualizarUsuario(req, res) {
     const { id } = req.params;
     const { nome, documento, telefone } = req.body;
@@ -72,7 +67,6 @@ module.exports = {
     });
   },
 
-  // Deleta um usuário
   async deletarUsuario(req, res) {
     const { id } = req.params;
 

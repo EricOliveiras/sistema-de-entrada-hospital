@@ -4,35 +4,30 @@ module.exports = {
   checarTamanhoString: (req, res, next) => {
     const { nome, nome_paciente, nome_acompanhante, documento, telefone } = req.body;
 
-    // Checa se o nome é válido
     if (nome) {
       if (nome.length < 3) {
         return res.status(400).json('Nome inválido');
       };
     };
 
-    // Checa se o nome do paciente é válido
     if (nome_paciente) {
       if (nome_paciente.length < 3) {
         return res.status(400).json('Nome do paciente inválido');
       };
     };
 
-    // Checa se o nome do acompanhante é válido
     if (nome_acompanhante) {
       if (nome_acompanhante.length < 3) {
         return res.status(400).json('Nome do acompanhante inválido');
       };
     };
 
-    // Checa se o documento é válido
     if (documento) {
       if (documento.length < 3) {
         return res.status(400).json('Documento inválido');
       };
     };
 
-    // Checa se o telefone é válido
     if (telefone) {
       if (telefone.length < 3) {
         return res.status(400).json('Telefone inválido');
