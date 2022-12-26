@@ -42,8 +42,6 @@ insomnia.json
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
-
 * [Node.js](https://nodejs.org/en/)
 * [Sequelize](https://sequelize.org/)
 * [PostgresSQL](https://www.postgresql.org/)
